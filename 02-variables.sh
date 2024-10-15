@@ -1,8 +1,10 @@
 #!/bin/bash
+PERSON1=Ramesh
+PERSON2=Suresh
 
-echo "ramesh:: hello suresh gm"
-echo "suresh:: hello very gm"
-echo "ramesh:: how are you"
-echo "suresh:: fine how are you"
+echo "$PERSON1:: hello $PERSON2 gm"
+echo "$PERSON2:: hello very gm"
+echo "$PERSON1:: how are you"
+echo "$PERSON2:: fine how are you"
 
-echo "abc"
+
