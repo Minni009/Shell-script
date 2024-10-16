@@ -4,8 +4,8 @@ ID=$(id -u)
 VALIDATE() {
     if [$1 -ne 0]
     then 
-      echo " $2 failure
-
+      echo " $2 failure"
+    else
       echo "$2 succes"
     fi
 }
