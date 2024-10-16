@@ -1,6 +1,9 @@
 #!/bin/bash
 
-NUM=$1
+
+
+echo "Enter your number"
+read NUM
 
 if [ $NUM -gt 100 ]
 then
