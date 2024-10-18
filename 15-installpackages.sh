@@ -27,10 +27,10 @@ fi
 
 for PACKAGE in $@
 do
-  yum list installed $PACKAGE &>> LOGFILE
+  yum list installed $PACKAGE &>> $LOGFILE
   if [ $? -ne 0 ]
   then
-    yum install $PACKAGE -y $>> LOGFILE
+    yum install $PACKAGE -y &>> $LOGFILE
     VALIDATE $? "installation of $PACKAGE"
 
   else
