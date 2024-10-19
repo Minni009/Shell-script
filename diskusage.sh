@@ -2,7 +2,6 @@
 
 DISK_USAGE=$(df -hT | grep -vE 'tmp|File')
 DISK_THERSHOLD=1
-message=""
 
 while IFS= read line
 do 
@@ -12,6 +11,6 @@ do
   then
    message+="High Disk Usage on $partition: $usage\n"
    fi
-done <<< $DISK_USAG
+done <<< $DISK_USAGE
 
 echo -e "MESSAGE: $message"
