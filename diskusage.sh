@@ -2,6 +2,7 @@
 
 DISK_USAGE=$(df -hT | grep -vE 'tmp|File')
 DISK_THERSHOLD=1
+message=""
 
 while IFS= read line
 do 
