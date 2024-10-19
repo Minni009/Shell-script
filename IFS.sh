@@ -15,4 +15,5 @@ do
   echo "username: $username"
   echo "userid: $userid"
   echo "groupid: $groupid"
+  echo "........................................"
 done < $file
