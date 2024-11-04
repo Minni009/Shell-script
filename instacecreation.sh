@@ -1,10 +1,10 @@
 #!/bin/bash
 
-AMI=ami-0f3c7d07486cad139 #this keeps on changing
-SG_ID=sg-087e7afb3a936fce7 #replace with your SG ID
+AMI=ami-0b4f379183e5706b9 #this keeps on changing
+SG_ID=sg-06d07da8b79ddd1c2 #replace with your SG ID
 INSTANCES=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping" "payment" "dispatch" "web")
-ZONE_ID=Z104317737D96UJVA7NEF # replace your zone ID
-DOMAIN_NAME="daws76s.online"
+ZONE_ID=Z009582318L4P99R5FTTV # replace your zone ID
+DOMAIN_NAME="joinaiops76.online"
 
 for i in "${INSTANCES[@]}"
 do
@@ -18,7 +18,7 @@ do
     IP_ADDRESS=$(aws ec2 run-instances --image-id $AMI --instance-type $INSTANCE_TYPE --security-group-ids sg-087e7afb3a936fce7 --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$i}]" --query 'Instances[0].PrivateIpAddress' --output text)
     echo "$i: $IP_ADDRESS"
 
-    
+
 
     #create R53 record, make sure you delete existing record
     aws route53 change-resource-record-sets \
